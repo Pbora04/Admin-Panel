@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+padding:0;
+}
+
+body{
+background-color: rgb(7, 56, 1);
+color: #fff;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+nav{
+    background-color: rgb(104, 188, 104);
+    display: flex;
+    text-align: right;
+    width: 30px;
+}
+
+nav .right{
+    display: flex;
+    text-align: right;
+    width: 30px;
+
+
+
+
+}
+nav .left{
+    display: flex;
+    text-align: center;
+}

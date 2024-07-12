@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayData(){
+            let nameData = document.getElementById("nameID").value
+    let passwordData = document.getElementById("passwordID").value
+            console.log("enter the userName:",nameData)
+            console.log("enter the password",passwordData)
+            document.write(passwordData); 
+            console.log(nameData)
+        }
+
+
+    async function apiFunc(){
+    let apiData= await fetch( "https://jsonplaceholder.typicode.com/users");
+      apiData=await apiData.json()
+    console.log(apiData)
+     document.getElementById("getapiData").innerHTML =apiData.map((item)=>
+    `
+    <tr>
+         <td> ${item.id}</td>
+         <td> ${item.name}</td>
+    </tr>
+
+     `
+    ).join("")}
+    apiFunc()
+   
+    </script>
+
+</head>
+<body>
+    <form>
+        <label style="color:pink; border: 2px solid black; ">Name :</label><input type="text" placeholder=" Name" id="nameID"/>
+        <br>
+        <label>password  :</label><input type="text" placeholder="Enter password" id="passwordID"/>
+        <br>
+        <button onclick="displayData()">Submit</button>
+    </form>
+   <table border="1">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+    </tr>
+    </thead>
+    <tbody id="getapiData" >
+     
+    </tbody>
+
+   </table>
+    
+</body>
+</html>
